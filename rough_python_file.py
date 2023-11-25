@@ -13,3 +13,6 @@ else:
 
 var = a if a>b else b
 print(var)
+
+if 1==1:
+    pass
