@@ -1,0 +1,82 @@
+function is a single unit, inside the function we wrote the logic/functionality.
+when we need same kind of functionality we will call this function name.
+
+syntax:-
+
+def function_name(parameter):
+    statement/logic/functionality
+    return data
+
+function_name(arguments)
+
+
+type of function:-
+
+2 types
+
+inbuilt function
+user define function
+
+
+#Parameter and Arguments
+
+def function_name(parameter):
+    logic
+    return data
+
+function_name(arguments)
+
+def add(a,b)
+def str_iter(s)
+def list_iter(li)
+def dict_iter(di)
+
+
+#type of parameter/arguments
+4 types of parameter/arguments
+
+positional
+keyword
+default
+variable length of arguments
+
+
+def func_name(parameter):
+    statement
+
+
+func_name(arg)
+
+
+'''
+1.Lambda Function
+2.filter, map, reduce----- 45m
+3.Recursive
+4.Nested  -- 45m
+
+5.Decorater -- 1hr
+6.Generator
+
+#Nested Function
+when we call a function inside a function is known as nested function.
+
+def func1():
+    def func2():
+        def func3():
+
+
+# Recursion,Decorator,Generator
+
+Recursion:- it's process when a function called him self, then it's known as recursion
+
+
+
+
+
+
+
+
+
+
+
+

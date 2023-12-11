@@ -67,7 +67,9 @@
 #
 # print(10 not in li)
 
-
+a.py--- data
+b.py
+c.y
 
 
 

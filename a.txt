@@ -1,6 +1,55 @@
-dkcn evw
-bjk cb
-sdjk b
-sdbc jias
-asdjc b
-asbcj be
+Core Python
+
+Introduction
+Features
+Keyword
+Identifiers
+Data Type
+Data Structure(string,list,dict,range)
+operator
+flow(condtional,iterative,transfer)
+shallow and deep copy
+list comprehension
+garbage collection
+
+left
+Dictionary comprehension
+Repetaion :-
+Flow control
+
+
+Advance Python
+
+Module 1h
+Packages 1h
+Function 4h
+File Handeling 2h
+Exception Handeling 2h
+Regular Expression 1.5h
+oops 5-6h
+
+22h
+
+today 1h
+2h
+
+today 8 -- sql --- 7pm --- 1h
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
