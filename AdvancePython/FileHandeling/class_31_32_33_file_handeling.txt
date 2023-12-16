@@ -1,0 +1,351 @@
+           File Handeling
+                        -------------==
+
+As the part of programmingrequirement,we have to store our data permannently for future purpose.For this requirement we should go for files.
+
+
+Files are very common permanent storage areas to store our data.
+
+Types of Files:-
+--------------
+
+There are 2 types of files are accept in python.
+
+1.Text Fles:
+------------
+
+Usually we can use text file to store character data
+ex:- abc.txt
+
+2.Binary Files.
+--------------
+
+usually we can use binary files to store binary data like images,video files,audio files etc.
+ex:-abc.png
+
+Opening a file:-
+--------------
+
+Before performing any operation(like read or write) on the fiel.First we have to open that file.For this we should use Python's inbuilt function:- open()
+
+But at the time of open,we have to specify mode,which represents the purpose of opening file.
+
+
+syntax:-
+
+variable = open("file_path","mode")
+
+mode:-
+----
+
+read(r):-
+--------
+Open an existing file for read opeartion,The file pointer is positioned at the beginning of the file.If the specified file does not exits then we will get FileNotFoundError.This is default mode.
+
+file_open = open("D:\\SCODEEN\\testing_19_python\\class_1_introduction.txt","r")
+
+write(w):-
+--------
+Open an existing file for write opeartion.If the file already contain some data then it will be overridden.If the specified file is not alraedy available then this mode will create that file.
+
+file_open = open("D:\\SCODEEN\\testing_19_python\\class_1_introduction.txt","w")
+
+
+append(a):-
+---------
+Open an exitsting file for append opeartion.It won't override existing data.If the specified file is not already available then this mode will create a new file.
+
+file_open = open("D:\\SCODEEN\\testing_19_python\\class_1_introduction.txt","a")
+
+Note:- All the above modes are applicable for text files only.If the above modes suffixed with 'b' then these represents for binary files.
+
+ex:- file_open = open("D:\\SCODEEN\\testing_19_python\\class_1_introduction.txt","wb")
+
+ex:- rb,wb,ab
+
+
+Closing a File:-
+--------------
+After completing our operation on the filr.It is highly recommended to close the file.For this we have to use close() function.
+
+variable.close()
+
+ex-:
+
+file_open = open("D:\\SCODEEN\\testing_19_python\\class_1_introduction.txt","r")
+file_open.close()
+
+
+Read:-
+----
+Reading Characters Data from the text
+1.read():- To read total data from the file.
+
+ex:-
+
+f = open("D:\\SCODEEN\\testing_17_18_python\\class_1_introduction.txt","r")
+data = f.read()
+print(data)
+f.close()
+
+2.read(n):- To read 'n' Characters from the file.
+
+f = open("D:\\SCODEEN\\testing_17_18_python\\class_1_introduction.txt","r")
+data = f.read(1000)
+print(data)
+f.close()
+
+3.readline():-To read only one line.
+
+f = open("D:\\SCODEEN\\testing_17_18_python\\class_1_introduction.txt","r")
+data = f.readline()
+print(data)
+f.close()
+
+4.readlines():-To read all lines into a list.
+
+f = open("D:\\SCODEEN\\testing_17_18_python\\class_1_introduction.txt","r")
+data = f.readlines()
+for line in data:
+    print(line,end="")
+f.close()
+
+Various Properties of file object:-
+---------------------------------
+
+Once we opened a file and we got file object,we can get various details related to that file by using its properties.
+
+name:- Name of opened name.
+mode:-Mode in which the file is openeed.
+readable:- Returns boolean value indicates that whether file is readable or not.
+writbale:- Returns boolean value indicates that whether file is writable or not.
+closeed:- Rerturns boolean value indicates that file is closed or not
+
+
+ex:-
+
+f = open("D:\\SCODEEN\\testing_17_18_python\\class_1_introduction.txt","r")
+print("File Name:-",f.name)
+print("File mode:-",f.mode)
+print("Is file readable:-",f.readable())
+print("Is file writable:-",f.writable())
+print("Is file closed:-",f.closed)
+f.close()
+print("2nd_attemped Is file closed:-",f.closed)
+
+
+ex_output:-
+
+File Name:- D:\SCODEEN\testing_17_18_python\class_1_introduction.txt
+File mode:- r
+Is file readable:- True
+Is file writable:- False
+Is file closed:- False
+2nd_attemped Is file closed:- True
+
+he with statement:
+The with statement can be used while opening a file.We can use this to group file 
+operation statements within a block.
+The advantage of with statement is it will take care closing of file,after completing all 
+operations automatically even in the case of exceptions also, and we are not required to 
+close explicitly.
+Eg:
+1) with open("abc.txt","w") as f: 
+2)  f.write("Chandra\n") 
+3)  f.write("Sekhar\n") 
+4)  f.write("Nayak\n") 
+5)  print("Is File Closed: ",f.closed) 
+6) print("Is File Closed: ",f.closed) 
+7) 
+8) Output
+9) Is File Closed: False 
+10) Is File Closed: True 
+
+
+
+Handling csv files:
+CSV==>Comma seperated values
+As the part of programming,it is very common requirement to write and read data wrt csv 
+files. Python provides csv module to handle csv files.
+Writing data to csv file:
+1) import csv 
+2) with open("emp.csv","w",newline='') as f: 
+3) w=csv.writer(f) # returns csv writer object 
+4) w.writerow(["ENO","ENAME","ESAL","EADDR"]) 
+5) n=int(input("Enter Number of Employees:")) 
+6) for i in range(n): 
+7) eno=input("Enter Employee No:") 
+8) ename=input("Enter Employee Name:") 
+9) esal=input("Enter Employee Salary:") 
+10) eaddr=input("Enter Employee Address:") 
+11) w.writerow([eno,ename,esal,eaddr]) 
+12) print("Total Employees data written to csv file successfully") 
+Note: Observe the difference with newline attribute and without
+with open("emp.csv","w",newline='') as f:
+with open("emp.csv","w") as f:
+
+
+Reading Data from csv file:
+1) import csv 
+2) f=open("emp.csv",'r') 
+3) r=csv.reader(f) #returns csv reader object 
+4) data=list(r) 
+5) #print(data) 
+6) for line in data: 
+7) for word in line: 
+8) print(word,"\t",end='') 
+9) print() 
+10) 
+11) Output
+12) D:\Python_classes>py test.py 
+
+ENumber     EName   ESalary     EAddress    
+101         Ajay     67000       Pune   
+102         Bijay    87000       Mumbai     
+102         Yukti    78000       Chandigarh     
+104         Rauk     67889       Kolkata    
+
+
+
+
+
+
+
+
+
+---------------------------------------------------  Running Notes --------------------------------------------------------
+''' 2 types
+1.Text File(.text,.csv,.xlsx,.ppt)
+2.Binary File(image,audio,video)
+
+'''
+
+'''
+syntax:- How to open a file
+
+var = open('file_path','mode')
+r,w,a --- 
+
+read:- read a file only, nothing change in file. if file is not avialable in mentioned path it's showing 
+error(FileNotFoundError)
+4 methods in read:-
+
+read()
+read(n)
+readline()
+readlines()
+
+
+,write:- open an existing file for write or change operation.If he file already contains some data then it 
+will be overrideen, if the specified is not avialable then this mode will create that file first.
+
+write and writelines
+,append:- open an existing file for write or change operation.If he file already contains some data then it 
+will be write new data after old, if the specified is not avialable then this mode will create that file first.
+'''
+# file_1 = open('D:\TREENETRA\Treenetra_class_notes\TREENETRA_AT-5\class_1_2_python_introduction.txt','r')
+# data = file_1.read()
+# print(data)
+
+#read(n)
+
+# file_1 = open('D:\TREENETRA\Treenetra_class_notes\TREENETRA_AT-5\class_1_2_python_introduction.txt','r')
+# data = file_1.read(5)
+# print(data)
+
+#readline()
+# file_1 = open('D:\TREENETRA\Treenetra_class_notes\TREENETRA_AT-5\class_1_2_python_introduction.txt','r')
+# data1 = file_1.readline()
+# print(data1)
+# data2 = file_1.readline()
+# print(data2)
+# data3 = file_1.readline()
+# print(data3)
+# data3 = file_1.readline()
+# print(data3)
+# data4 = file_1.readline()
+# print(data4)
+
+#readlines():-
+
+# file_1 = open('D:\TREENETRA\Treenetra_class_notes\TREENETRA_AT-5\class_1_2_python_introduction.txt','r')
+# data1 = file_1.readlines()
+# print(data1)
+
+# Special Char/Escape Char
+'''
+\n :- New Line
+\t :- Horizontal Tab
+\r :- return
+\b :- back space
+\v :- vertical tab
+'''
+
+
+#Write:-
+
+# var = open('D:\TREENETRA\Treenetra_class_notes\TREENETRA_AT-5\\testing_a_file_qwerty.txt','w')
+# var.write('sdbgehfvujdhvjkwhvjkchwejkchwejkchejkwc')
+
+# var = open('D:\TREENETRA\Treenetra_class_notes\TREENETRA_AT-5\\testing_a_file_qwerty.txt','a')
+# var.write('\nhjkchwdjkcvnhwecvjkwenwjkcbwdjk\njhgcvwdjhbvwehcbvhew')
+
+#close the file
+
+# file_1 = open('D:\TREENETRA\Treenetra_class_notes\TREENETRA_AT-5\class_1_2_python_introduction.txt','r')
+# data1 = file_1.readlines()
+# # print(data1)
+# file_1.close()
+# print(file_1.closed)
+#
+# #Variours properties of file object.
+#
+# #name
+# print(file_1.name)
+# #mode
+# print(file_1.mode)
+# #readable
+# # print(file_1.readable())
+# #writable
+# print(file_1.writable())
+# #closed
+# print(file_1.closed)
+
+#-------------------------------- With Statement------------------------------
+
+# with open('D:\TREENETRA\Treenetra_class_notes\TREENETRA_AT-5\class_1_2_python_introduction.txt','r') as var:
+#     data = var.readlines()
+#     print(data)
+#     print(var.closed)
+#
+# print(var.closed)
+
+# How to handel CSV file :- Comma Separated Value
+import csv
+# print(dir(csv))  # writer ,reader
+
+
+# with open('C:\\Users\chand\PycharmProjects\PythonAutomationAllBatch\TREENETRA_AT_5\BasicPython\AdvancePython\FileHandeling\\treenetra_at_5_data.csv','w',newline='') as var:
+#     w = csv.writer(var) # returns csv writer object  writerow writerows
+#     w.writerow(['ENO','ENAME','ESALARY','EADDRESS'])
+#     n = int(input('Enter number of employees'))
+#     for i in range(n):
+#         eno = int(input('Enter Employee Number:-'))
+#         ename = input('Enter Employee Name:-')
+#         esalary = int(input('Enter Employee Salary:-'))
+#         eaddress = input('Enter Employee address:-')
+#         w.writerow([eno,ename,esalary,eaddress])
+
+
+#read csv file data
+
+import csv
+with open('C:\\Users\chand\PycharmProjects\PythonAutomationAllBatch\TREENETRA_AT_5\BasicPython\AdvancePython\FileHandeling\\treenetra_at_5_data.csv','r') as var:
+    data = csv.reader(var)
+    sort_data = list(data)
+    # print(sort_dat)
+    for i in sort_data:
+        for j in i:
+            print(j)
+
+
