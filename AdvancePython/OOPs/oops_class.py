@@ -272,18 +272,156 @@
 
 #Static Method and Local variable
 
-class A:
-
-    def a(self):
-        global c
-        c = 20 #local variable
-
-    @staticmethod
-    def add(a,b):
-        result = a+b
-        return result
-
-obj = A
-print(obj.add(10,20))
+# class A:
+#
+#     def a(self):
+#         global c
+#         c = 20 #local variable
+#
+#     @staticmethod
+#     def add(a,b):
+#         result = a+b
+#         return result
+#
+# obj = A
+# print(obj.add(10,20))
 
 #In a single class using intance,class and static method
+
+# class MathematicalOperations:
+#
+#     vl = int(input('Enter a value:-'))
+#     def __init__(self,value):
+#         self.value = value
+#
+#     def squre(self):
+#         return self.value**2
+#
+#     @classmethod
+#     def cube(cls):
+#         return cls.vl**3
+#
+#     @staticmethod
+#     def multiple(*args):
+#         sum = 0
+#         for i in args:
+#             sum = sum+i
+#         return sum
+#
+# obj = MathematicalOperations(10)
+# print(obj.squre())
+# print(obj.cube())
+# print(obj.multiple(10,20,30,24,27.19))
+
+#In python there are 4 types inhheritance
+#single, Multiple , multi level , hierachical
+
+#Single
+
+# class Math:
+#
+#     def __init__(self,num):
+#         self.num = num
+#     def squre(self):
+#         result = self.num**2
+#         return result
+#
+#     def cube(self):
+#         result = self.num**3
+#         return result
+#
+# class Alg(Math):
+#
+#     def __init__(self,num,x,y):
+#         super().__init__(num)
+#         self.x = x
+#         self.y = y
+#
+#     def add(self):
+#         result = self.x +self.y
+#         return result
+#
+# obj = Alg(5,10,20)
+# print(obj.add())
+# print(obj.cube())
+# print(obj.squre())
+
+
+#Write a single inhheritance creat a class School(name,location) have function number students
+#create Students class ,and in method students subject deatils.
+
+# class School:
+#
+#     def __init__(self,name,location):
+#         self.name = name
+#         self.location = location
+#     def num_of_studnets(self,no_of_std):
+#         self.no_of_std = no_of_std
+#         return self.no_of_std
+#
+# class Studnets(School):
+#     def __init__(self,name,location):
+#         super().__init__(name,location)
+#
+#     def subject_deatils(self,subject = []):
+#         num_of_subject = int(input('Enter number of subjects:-'))
+#         for i in range(num_of_subject):
+#             subject_name = (input('Enter name of the  subject:-'))
+#             subject.append(subject_name)
+#         return subject
+#
+# obj = Studnets('Sri Aurobindo','Bhubaneswar')
+# print(obj.num_of_studnets(120))
+# print(obj.subject_deatils())
+
+
+#Hirechical Inhheritance
+# One singel paresnt class call mutile child class
+
+class School:
+
+    def __init__(self,scl_name,scl_location):
+        self.scl_name = scl_name
+        self.scl_location = scl_location
+
+    def brand(self,logo):
+        self.logo = logo
+        return logo
+
+class Batch8(School):
+
+    def __init__(self,scl_name,scl_location,batch_name):
+        super().__init__(scl_name,scl_location)
+        self.batch_name = batch_name
+
+    def batch_deatils(self,num_of_students):
+        self.num_of_studensts = num_of_students
+        return self.scl_name, self.scl_location,self.num_of_studensts ,self.brand('Astik')
+
+
+class Batch9(School):
+
+    def __init__(self, scl_name, scl_location, batch_name):
+        super().__init__(scl_name, scl_location)
+        self.batch_name = batch_name
+
+    def batch_deatils(self, num_of_students):
+        self.num_of_studensts = num_of_students
+        return self.scl_name, self.scl_location, self.num_of_studensts, self.brand('Astik')
+
+
+obj_batch8 = Batch8('SRI AUROBINDO','BBSR','Batch-8')
+obj_batch9 = Batch9('SRI AUROBINDO','BBSR','Batch-9')
+print(obj_batch8.brand('Astik'))
+print(obj_batch8.batch_deatils(120))
+print(obj_batch9.batch_deatils(170))
+
+
+
+
+
+
+
+
+
+
