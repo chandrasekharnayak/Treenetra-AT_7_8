@@ -378,48 +378,130 @@
 #Hirechical Inhheritance
 # One singel paresnt class call mutile child class
 
-class School:
+# class School:
+#
+#     def __init__(self,scl_name,scl_location):
+#         self.scl_name = scl_name
+#         self.scl_location = scl_location
+#
+#     def brand(self,logo):
+#         self.logo = logo
+#         return logo
+#
+# class Batch8(School):
+#
+#     def __init__(self,scl_name,scl_location,batch_name):
+#         super().__init__(scl_name,scl_location)
+#         self.batch_name = batch_name
+#
+#     def batch_deatils(self,num_of_students):
+#         self.num_of_studensts = num_of_students
+#         return self.scl_name, self.scl_location,self.num_of_studensts ,self.brand('Astik')
+#
+#
+# class Batch9(School):
+#
+#     def __init__(self, scl_name, scl_location, batch_name):
+#         super().__init__(scl_name, scl_location)
+#         self.batch_name = batch_name
+#
+#     def batch_deatils(self, num_of_students):
+#         self.num_of_studensts = num_of_students
+#         return self.scl_name, self.scl_location, self.num_of_studensts, self.brand('Astik')
+#
+#
+# obj_batch8 = Batch8('SRI AUROBINDO','BBSR','Batch-8')
+# obj_batch9 = Batch9('SRI AUROBINDO','BBSR','Batch-9')
+# print(obj_batch8.brand('Astik'))
+# print(obj_batch8.batch_deatils(120))
+# print(obj_batch9.batch_deatils(170))
 
-    def __init__(self,scl_name,scl_location):
-        self.scl_name = scl_name
-        self.scl_location = scl_location
+#Multiple Inhheritance
 
-    def brand(self,logo):
-        self.logo = logo
-        return logo
-
-class Batch8(School):
-
-    def __init__(self,scl_name,scl_location,batch_name):
-        super().__init__(scl_name,scl_location)
-        self.batch_name = batch_name
-
-    def batch_deatils(self,num_of_students):
-        self.num_of_studensts = num_of_students
-        return self.scl_name, self.scl_location,self.num_of_studensts ,self.brand('Astik')
-
-
-class Batch9(School):
-
-    def __init__(self, scl_name, scl_location, batch_name):
-        super().__init__(scl_name, scl_location)
-        self.batch_name = batch_name
-
-    def batch_deatils(self, num_of_students):
-        self.num_of_studensts = num_of_students
-        return self.scl_name, self.scl_location, self.num_of_studensts, self.brand('Astik')
+# class A:
+#     def fly(self):
+#         return 'can fly'
+#
+# class B:
+#     def swim(self):
+#         return 'can swim'
+#
+# class C(A,B):
+#     def runinng(self):
+#         return 'can run'
+#
+# obj = C
+# print(obj.runinng('a'))
+# print(obj.swim('a'))
+# print(obj.fly('a'))
 
 
-obj_batch8 = Batch8('SRI AUROBINDO','BBSR','Batch-8')
-obj_batch9 = Batch9('SRI AUROBINDO','BBSR','Batch-9')
-print(obj_batch8.brand('Astik'))
-print(obj_batch8.batch_deatils(120))
-print(obj_batch9.batch_deatils(170))
+# class Adder:
+#     def add(self,a,b):
+#         return a+b
+#
+# class Subtractor:
+#     def sub(self,a,b):
+#         return a-b
+#
+# class Multiplier:
+#     def mul(self,a,b):
+#         return a*b
+#
+# class Calculator(Adder,Subtractor,Multiplier):
+#     def perform_operation(self,a,b):
+#         result_add = self.add(a,b)
+#         result_sub = self.sub(result_add,b)
+#         result_mul = self.mul(result_sub,b)
+#         return result_mul
+#
+# obj = Calculator()
+# result = obj.perform_operation(5,3)
+# print(result)
 
 
+#Multilevel Inhheritance
+# class Animal:
+#     def speak(self):
+#         return 'Animal speaks'
+#
+# class Dog(Animal):
+#     def brak(self):
+#         return 'Dog Braks'
+#
+# class Labrador(Dog):
+#     def color(self):
+#         return 'Labrador is brown'
+#
+# obj_labrador = Labrador()
+# print(obj_labrador.color())
+# print(obj_labrador.brak())
+# print(obj_labrador.speak())
+
+#
+
+class Operation:
+    def perform_operation(self,a,b):
+        raise NotImplementedError('Subclasses must implement this method ')
+
+class Addrer(Operation):
+    def perform_operation(self,a,b):
+        return a+b
+
+class Subtrator(Addrer):
+    def perform_operation(self,a,b):
+        result_add = super().perform_operation(a,b) #8
+        return result_add-b
+
+class Multiplier(Subtrator):
+    def perform_operation(self,a,b):
+        result_subtrator = super().perform_operation(a,b) #5
+        return result_subtrator*a
 
 
-
+obj_mul = Multiplier()
+result = obj_mul.perform_operation(5,3)
+print(result)
 
 
 
