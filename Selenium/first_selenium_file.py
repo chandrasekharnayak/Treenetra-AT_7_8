@@ -15,7 +15,7 @@ driver.close() #multile web application
 '''what is locator 
 selenium have 8 types of locator
 
-ID,NAME,CLASSNAME,TAGNAME,LINKTEXT,PARTIALLINKTEXT,XAPTH,CSSSEKECTOR'''
+ID,NAME,CLASSNAME,TAGNAME,LINKTEXT,PARTIALLINKTEXT,XAPTH,CSSSELECTOR'''
 
 #1. open a website or web application through selenium
 #2. then connection the web element

@@ -10,6 +10,7 @@ driver.get('https://www.facebook.com/?stype=lo&deoia=1&jlou=AfdtvQaBVV1bAj0lwXkl
 
 #id
 # email = driver.find_element(By.ID,'email').send_keys('qwerty@108')
+email = driver.find_element(By.CSS_SELECTOR,'#email').send_keys('djhk')
 #name
 # email = driver.find_element(By.NAME,'email').send_keys('querty@108')
 #classname
@@ -26,7 +27,7 @@ driver.get('https://www.facebook.com/?stype=lo&deoia=1&jlou=AfdtvQaBVV1bAj0lwXkl
 # forget_password = driver.find_element(By.LINK_TEXT,'Forgotten password?').click()
 
 #Partial_link_text
-forget_password = driver.find_element(By.PARTIAL_LINK_TEXT,'Forgotten').click()
+# forget_password = driver.find_element(By.PARTIAL_LINK_TEXT,'Forgotten').click()
 
 time.sleep(5)
 driver.quit()
