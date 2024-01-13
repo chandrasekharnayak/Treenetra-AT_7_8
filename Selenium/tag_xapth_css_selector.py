@@ -29,6 +29,7 @@ driver.get('https://www.facebook.com/campaign/landing.php?campaign_id=1488491364
 # radio_button = driver.find_element(By.CSS_SELECTOR,"input[class='_8esa']").click()
 #id = css_selector
 # .name = css_seleor
-first_name = driver.find_element(By.CSS_SELECTOR,'#u_0_b_Gb').send_keys('rdjk')
-time.sleep(4)
+# first_name = driver.find_element(By.CSS_SELECTOR,'#u_0_b_Gb').send_keys('rdjk')
+# time.sleep(4)
 driver.quit()
+
