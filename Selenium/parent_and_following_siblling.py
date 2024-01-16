@@ -19,7 +19,7 @@ time.sleep(2)
 driver.quit()
 
 dropdown
-check_box and radio button
+implicity and explicity
 iframe
 Action chain:- double click
 mouse hover
