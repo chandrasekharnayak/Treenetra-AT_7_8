@@ -18,12 +18,12 @@ time.sleep(2)
 
 driver.quit()
 
-dropdown
-implicity and explicity
+
 iframe
-Action chain:- double click
-mouse hover
-mutlti window
-screenshot
-scroll
-freez
+popup and alret
+
+pytest
+robo
+api
+project
+
