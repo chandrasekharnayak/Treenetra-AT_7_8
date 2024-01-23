@@ -1,0 +1,45 @@
+testing wants some rules and regulation for run test suits
+> Regression
+> Smoke
+> Sanity
+
+test suits(Folders), test file(python file), test case(python function)
+
+Akways First Folder is your project and it's a package.
+pytest is creating relation between all test files , so that we will a python package for it.
+Always a Test folder name startswith Test.
+test file name must be startswith _test or test_
+test case always written in test file only
+test case name also start with test
+
+Basic Pytest Foldet
+
+ProjeName/
+|
+| SRC/
+    |__init__.py
+    |your_code_files.py
+|
+|TestFolder/
+    |__init__.py
+    |test_your_code_file.py
+|
+|REDME.md (store all the information about project)
+
+test run path :- Must be we are in TestFolder Path
+
+pytest
+pytest -v -s
+pytest test_file_name.py -v -s
+
+
+
+
+
+
+
+
+
+
+
+
