@@ -2,6 +2,7 @@
 #skip,skipif,xfail, passed,parameterized, custom
 # pytest file -v -s
 #pytest file_name -m custom_mark_name -v -s
+#perticual test case :- pytest file_name -k test_case_name -v -s
 import sys
 
 import pytest
